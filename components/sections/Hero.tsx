@@ -25,7 +25,12 @@ function useHeroImage() {
   const {
     props: { srcSet: mobile, ...rest },
   } = getImageProps({ ...common, width: 1520, height: 2688, src: "/images/hero-mobile.webp" });
-  return { desktop, mobile, rest };
+  // With an unoptimized (static) build there is no srcSet, so fall back to the originals.
+  return {
+    desktop: desktop ?? "/images/hero-desktop.webp",
+    mobile: mobile ?? "/images/hero-mobile.webp",
+    rest,
+  };
 }
 
 export function Hero() {

@@ -37,14 +37,6 @@
     }
   }
 
-  body {
-    background: var(--color-ink);
-    color: var(--color-fg);
-    font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: clip;
-  }
 
   ::selection {
     background: var(--color-signal);
@@ -59,6 +51,18 @@
   section[id] {
     scroll-margin-top: 4rem;
   }
+}
+
+/* Unlayered on purpose: wins over any host reset when the page is embedded. */
+body {
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
 /* Layout */
